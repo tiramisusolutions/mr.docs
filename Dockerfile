@@ -25,5 +25,5 @@ WORKDIR /build
 COPY conf conf
 COPY Makefile /build/Makefile
 
-#ENTRYPOINT ["make"]
-CMD ["/bin/ash"]
+ENTRYPOINT ["make"]
+#CMD ["/bin/ash"]
