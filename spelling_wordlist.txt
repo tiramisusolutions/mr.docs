@@ -380,6 +380,7 @@ wget
 whitespaces
 Wichert
 Wordpress
+workalikes
 workflow
 Workflows
 WSGI
