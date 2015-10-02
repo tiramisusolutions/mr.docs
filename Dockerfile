@@ -6,6 +6,8 @@ RUN apk update && apk add \
 	python \
 	python-dev \
 	build-base \
+        ca-certificates \
+        aspell-en \
 	py-pip \
 	enchant \
 	--update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
@@ -15,7 +17,8 @@ RUN apk update && apk add \
 	pyenchant \
 	sphinxcontrib-dashbuilder \
 	sphinxcontrib.gist \
-	sphinx-rtd-theme
+	sphinx-rtd-theme \
+        sphinxcontrib-spelling
 
 
 VOLUME ["/build/docs"]
@@ -23,6 +26,7 @@ VOLUME ["/build/docs"]
 WORKDIR /build
 
 COPY conf conf
+COPY spelling_wordlist.txt spelling_wordlist.txt
 COPY Makefile /build/Makefile
 
 ENTRYPOINT ["make"]
