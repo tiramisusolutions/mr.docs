@@ -1,0 +1,40 @@
+# sudo;false make sure tahat we run on the new travis container infra
+sudo: false
+language: python
+
+# Install dependencies
+#before_install:
+#    - sudo apt-get update -qq
+#    - sudo apt-get install -qq enchant
+
+addons:
+  apt:
+    packages:
+    - enchant
+
+python:
+  - "2.7"
+# command to install dependencies
+install:
+   - "pip install -q -r travisfiles/requirements.txt"
+     #   - "pip install --user git+https://github.com/Syntaf/travis-sphinx.git"
+
+script:
+   - cp travisfiles/Makefile docs/
+   - cp travisfiles/conf.py docs/
+   - cp -r travisfiles/_static docs
+# test if docs are building
+#script: sphinx-build -nW -b html -d _build/doctrees . _build/html
+# Flags used here, not in `make html`:
+#  -n   Run in nit-picky mode. Currently, this generates warnings for all missing references.
+#  -W   Turn warnings into errors. This means that the build stops at the first warning and sphinx-build exits with exit status 1
+
+# test links in docs
+#script: make -C docs testdocs
+
+# push gh-pages
+script:
+   - travis-sphinx --source=docs build
+
+after_success:
+   - travis-sphinx deploy
