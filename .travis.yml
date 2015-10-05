@@ -20,9 +20,10 @@ install:
      #   - "pip install --user git+https://github.com/Syntaf/travis-sphinx.git"
 
 script:
-   - cp travisfiles/Makefile docs/
-   - cp travisfiles/conf.py docs/
-   - cp -r travisfiles/_static docs
+   - "./travisfiles/deploy.sh"
+    #   - cp travisfiles/Makefile docs/
+    #   - cp travisfiles/conf.py docs/
+    #   - cp -r travisfiles/_static docs
 # test if docs are building
 #script: sphinx-build -nW -b html -d _build/doctrees . _build/html
 # Flags used here, not in `make html`:
