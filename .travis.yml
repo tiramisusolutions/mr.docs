@@ -24,8 +24,8 @@ install:
 
 before_script:
     #  - "./travisfiles/deploy.sh"
-  - curl -o docs https://raw.githubusercontent.com/tiramisusolutions/mr.docs/master/travisfiles/conf.py
-  - curl -o docs https://raw.githubusercontent.com/tiramisusolutions/mr.docs/master/travisfiles/Makefile
+  - curl -o docs/conf.py https://raw.githubusercontent.com/tiramisusolutions/mr.docs/master/travisfiles/conf.py
+  - curl -o docs/Makefile https://raw.githubusercontent.com/tiramisusolutions/mr.docs/master/travisfiles/Makefile
 
 script:
    
