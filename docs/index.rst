@@ -45,6 +45,8 @@ Typically you do want to have this as an alias, to make it easy to remember, for
 
 Please refer to the setup part [tbc] for more on setup and configuration.
 
+More soon !
+
 .. toctree::
    :maxdepth: 2
 
