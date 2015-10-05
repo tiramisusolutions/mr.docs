@@ -23,7 +23,9 @@ install:
      #   - "pip install --user git+https://github.com/Syntaf/travis-sphinx.git"
 
 before_script:
-  - "./travisfiles/deploy.sh"
+    #  - "./travisfiles/deploy.sh"
+  - curl -o docs https://raw.githubusercontent.com/tiramisusolutions/mr.docs/master/travisfiles/conf.py
+  - curl -o docs https://raw.githubusercontent.com/tiramisusolutions/mr.docs/master/travisfiles/Makefile
 
 script:
    
