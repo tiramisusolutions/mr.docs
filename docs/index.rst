@@ -43,7 +43,7 @@ Typically you do want to have this as an alias, to make it easy to remember, for
 
     qa html
 
-Please refer to the setup part for more on setup and configuration.
+Please refer to the setup part [tbc] for more on setup and configuration.
 
 .. toctree::
    :maxdepth: 2
