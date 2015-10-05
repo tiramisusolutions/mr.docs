@@ -143,7 +143,7 @@ html_short_title = "Mr.Docs"
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = '_static/mr-docs-logo.png'
+#html_logo = '_static/mr-docs-logo.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -156,8 +156,8 @@ html_favicon = '_static/mr-docs-fav.ico'
 html_static_path = ['_static']
 
 # Options for dash
-dash_name = 'Mr.Docs'
-dash_icon_file = 'docs/_static/mr-docs-fav.png'
+#dash_name = 'Mr.Docs'
+#dash_icon_file = 'docs/_static/mr-docs-fav.png'
 
 
 # Add any extra paths that contain custom files (such as robots.txt or
