@@ -47,6 +47,13 @@ Please refer to the setup part [tbc] for more on setup and configuration.
 
 More soon !
 
+To do
+-----
+
+- add gists
+- add video
+- add screenshots
+
 .. toctree::
    :maxdepth: 2
 
