@@ -5,6 +5,7 @@ Linux
 -----
 
 - dockerfunctions
+- add dir check to dockerfunctions
 
 OSX
 ----
