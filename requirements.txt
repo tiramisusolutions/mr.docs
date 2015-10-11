@@ -1,0 +1,5 @@
+sphinx
+sphinx-autobuild
+phinxcontrib-dashbuilder
+sphinxcontrib-spelling
+sphinxcontrib.gist
