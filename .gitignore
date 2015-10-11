@@ -1,1 +1,7 @@
 docs/_build/*
+include/*
+lib/*
+bin/*
+.DS_Store
+.Python
+docs/.DS_Store
