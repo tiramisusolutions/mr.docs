@@ -67,6 +67,7 @@ To do
 - add gists
 - add video
 - add screenshots
+- add setup
 
 .. toctree::
    :maxdepth: 2
