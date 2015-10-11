@@ -6,8 +6,22 @@
 mr.docs
 =======
 
-Install
---------
+About
+-----
+
+A testing tool for documentation.
+
+Dependencies
+------------
+
+- `Docker <https://docker.com>`_
+
+If you do not have Docker installed yet, please follow the `official install guide <https://docs.docker.com/installation/>`_.
+
+
+Getting mr.docs
+---------------
+
     docker pull quay.io/tiramisu/mr.docs
 
 Getting an update of the image
