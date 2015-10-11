@@ -23,7 +23,7 @@ It comes with a pre-configured list 'of good know words' based on typical terms 
 
 Full documentation for end users can be found in the "docs" folder.
 
-You can find the documentation as html on [Read The Docs](https://mrdocs.readthedocs.org/en/latest/).
+You can find the documentation online on [Read The Docs](https://mrdocs.readthedocs.org/en/latest/).
 
 
 ## Dependencies
