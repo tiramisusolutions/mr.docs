@@ -9,7 +9,8 @@ mr.docs
 About
 -----
 
-A testing tool for documentation.
+A testing tool for `Sphinx <http://sphinx-doc.org/>`_ based and in `reStructuredText [rst] <http://sphinx-doc.org/rest.html>`_ written documentation.
+
 
 Dependencies
 ------------
