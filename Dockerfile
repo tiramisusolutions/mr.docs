@@ -29,4 +29,3 @@ COPY spelling_wordlist.txt spelling_wordlist.txt
 COPY Makefile /build/Makefile
 
 ENTRYPOINT ["make"]
-#CMD ["/bin/ash"]
