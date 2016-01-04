@@ -1,8 +1,3 @@
-.. mr.docs documentation master file, created by
-   sphinx-quickstart on Sun Oct 11 16:46:55 2015.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 mr.docs
 =======
 
@@ -23,14 +18,18 @@ If you do not have Docker installed yet, please follow the `official install gui
 Getting mr.docs
 ---------------
 
-    docker pull quay.io/tiramisu/mr.docs
+.. code-block:: bash
+
+    $ docker pull quay.io/tiramisu/mr.docs
 
 Getting an update of the image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The only thing what you have to do it a new pull of the image:
+The only thing what you have to do is a new pull of the image:
 
-    docker pull quay.io/tiramisu/mr.docs
+.. code-block:: bash
+
+    $ docker pull quay.io/tiramisu/mr.docs
 
 Assumptions
 -----------
@@ -46,17 +45,23 @@ Example
 ~~~~~~~
 Change into the main directory of your project you working on, for example the Unified Installer for Plone
 
-    svx@black:~$ cd Projects/temp/Installers-UnifiedInstaller/
+.. code-block:: bash
+
+    $ cd Projects/temp/Installers-UnifiedInstaller/
 
 If you do now a ``ls``, you will see we have here a directory called ``docs``, great !
 
 If you want to build the documentation now as html, just run:
 
-    docker run -it --rm -v ${PWD}/docs:/build/docs:rw --name docs-test quay.io/tiramisu/mr.docs html
+.. code-block:: bash
+
+    $ docker run -it --rm -v ${PWD}/docs:/build/docs:rw --name docs-test quay.io/tiramisu/mr.docs html
 
 Typically you do want to have this as an alias, to make it easy to remember, for example I use the alias ``qa`` so I can just run:
 
-    qa html
+.. code-block:: bash
+
+    $ doctest html
 
 Please refer to the setup part [tbc] for more on setup and configuration.
 
