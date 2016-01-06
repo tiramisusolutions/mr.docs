@@ -1,6 +1,5 @@
 
 [![Docker Repository on Quay.io](https://quay.io/repository/tiramisu/mr.docs/status "Docker Repository on Quay.io")](https://quay.io/repository/tiramisu/mr.docs)
-
 [![Documentation Status](https://readthedocs.org/projects/mrdocs/badge/?version=latest)](http://mrdocs.readthedocs.org/en/latest/?badge=latest)
 
 # mr.docs
