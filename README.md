@@ -8,7 +8,7 @@ mr.docs is a [Docker container](https://docker.com "Homepage of docker"), which 
 
 mr.docs was written as a personal tool, to improve the [documentation of Plone](http://docs.plone.org).
 
-It comes with a pre-configured list 'of good know words' based on typical terms used within [Plone](https://plone.org). 
+It comes with a pre-configured list 'of good known words' based on typical terms used within [Plone](https://plone.org). 
 
 ## Features
 
