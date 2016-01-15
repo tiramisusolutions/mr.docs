@@ -1,11 +1,11 @@
 mr.docs
 =======
-
 About
 -----
 
 A testing tool for `Sphinx <http://sphinx-doc.org/>`_ based and in `reStructuredText [rst] <http://sphinx-doc.org/rest.html>`_ written documentation.
 
+See a `example on YouTube <https://www.youtube.com/watch?v=ik-1e-93RI4&feature=youtu.be>`_.
 
 Dependencies
 ------------
@@ -23,8 +23,8 @@ Getting mr.docs
 
     $ docker pull quay.io/tiramisu/mr.docs
 
-Getting an update of the image
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Update the image
+~~~~~~~~~~~~~~~~
 
 The only thing what you have to do is a new pull of the image:
 
@@ -66,19 +66,16 @@ Typically you do want to have this as an alias, to make it easy to remember, for
 
 Please refer to the setup part [tbc] for more on setup and configuration.
 
-More soon !
+.. toctree::
+   :maxdepth: 2
+
+   setup
+
 
 To do
 -----
-
-- add gists
 - add video
 - add screenshots
-- add setup
-
-
-.. toctree::
-   :maxdepth: 2
 
 
 
