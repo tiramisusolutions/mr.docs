@@ -1,7 +1,7 @@
 FROM alpine:3.3
 MAINTAINER Sven Strack <sven@so36.net>
 
-RUN apk update && apk add \
+RUN apk update && apk add --no-cache \
 	python \
 	python-dev \
 	build-base \
@@ -9,7 +9,6 @@ RUN apk update && apk add \
         aspell-en \
 	py-pip \
 	enchant \
-	&& rm -rf /var/cache/apk/* \
 	&& pip install --upgrade pip \
 	&& pip install sphinx \
 	pyenchant \
@@ -17,7 +16,10 @@ RUN apk update && apk add \
 	sphinxcontrib.gist \
 	sphinx-rtd-theme \
         sphinxcontrib-spelling \
-	sphinxcontrib-osexample
+	sphinxcontrib-osexample \
+        && apk del build-base \
+        && apk add --no-cache make \
+        && rm -rf /var/cache/apk/* \
 
 
 VOLUME ["/build/docs"]

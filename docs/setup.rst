@@ -29,7 +29,7 @@ Save the file and reload your bash
 
 .. code-block:: bash
 
-    $ source .
+    $ source .bashrc
 
 or close this terminal and start a new one
 
