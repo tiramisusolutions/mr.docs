@@ -3,7 +3,7 @@ Setup
 
 To make it easy we use some functions to talk with our container
 
-Download the gist, according to your OS and save it as for example as .dockerfunc
+Download the gist, according to your OS and save it as for example as .mrdocsfunc
 
 Linux
 -----
@@ -22,7 +22,7 @@ Adjust your `.bashrc` to source your new functions, we will use vim, but of cour
 
 .. code-block:: bash
 
-    # source dockerfunc
+    # source [load] mrdocsfunc
     source .dockerfunc
 
 Save the file and reload your bash

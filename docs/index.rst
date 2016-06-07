@@ -11,7 +11,6 @@ Dependencies
 ------------
 
 - `Docker <https://docker.com>`_
-- sudo [We plan to fix this in the future], this is only needed if you want to make use of ``dockerfunc``
 
 If you do not have Docker installed yet, please follow the `official install guide <https://docs.docker.com/installation/>`_.
 
@@ -56,13 +55,13 @@ If you want to build now the documentation as ``html``, just run:
 
 .. code-block:: bash
 
-    $ docker run -it --rm -v ${PWD}/docs:/build/docs:rw --name docs-test quay.io/tiramisu/mr.docs html
+    $ docker run -it --rm -v ${PWD}/docs:/build/docs:rw  -u $(id -u):$(id -g) --name docs-test quay.io/tiramisu/mr.docs html
 
-Typically you do want to have this as an alias, to make it easy to remember, for example I use the alias ``doctest`` so I can just run:
+Typically you do want to have this as an alias, to make it easy to remember, for example I use the alias ``mrdocs`` so I can just run:
 
 .. code-block:: bash
 
-    $ doctest html
+    $ mrdocs html
 
 Please refer to the setup part [tbc] for more on setup and configuration.
 

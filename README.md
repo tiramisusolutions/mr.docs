@@ -6,7 +6,7 @@
 
 mr.docs is a [Docker container](https://docker.com "Homepage of docker"), which can help you with testing documentation written in [Sphinx](http://sphinx-doc.org/). 
 
-mr.docs was written as a personal tool, to improve the [documentation of Plone](http://docs.plone.org).
+mr.docs is written as a personal tool, to improve the [documentation of Plone](http://docs.plone.org).
 
 It comes with a pre-configured list 'of good known words' based on typical terms used within [Plone](https://plone.org). 
 
