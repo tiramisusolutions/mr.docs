@@ -6,17 +6,22 @@ ENV PIP_CACHE /root/.cache
 RUN apk --no-cache add bash python py-pip openssl ca-certificates aspell-en \
 	enchant && \
     apk --no-cache add --virtual build-dependencies \
-	python-dev build-base wget && \
+	python-dev build-base && \
     pip install --upgrade pip && \
-    wget https://gist.githubusercontent.com/svx/eef4cda9b11df96a952347136821eaae/raw/cd6a5b3fbcd12b9751f9b6204bcbc9923cafb9db/mr.docs-requirements.txt && \
-    pip install -r mr.docs-requirements.txt &&\
-    rm mr.docs-requirements.txt &&\
+    pip install sphinx \
+	pyenchant \
+	sphinxcontrib-dashbuilder \
+	sphinxcontrib.gist \
+	sphinx-rtd-theme \
+        sphinxcontrib-spelling \
+	sphinxcontrib-osexample && \
     rm -rf $PIP_CACHE && \
     apk del build-dependencies && \
     apk --no-cache add make
 
 
 
+#WORKDIR /usr/src/docs
 VOLUME ["/build/docs"]
 
 
