@@ -3,6 +3,9 @@ mr.docs
 About
 -----
 
+Todo: add docker install with user in right group, so that you can run it without sudo or root
+
+
 A testing tool for `Sphinx <http://sphinx-doc.org/>`_ based and in `reStructuredText [rst] <http://sphinx-doc.org/rest.html>`_ written documentation.
 
 See a `example on YouTube <https://www.youtube.com/watch?v=ik-1e-93RI4&feature=youtu.be>`_.
