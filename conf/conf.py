@@ -42,7 +42,7 @@ extensions = [
 linkcheck_ignore = [r'http://localhost:\d+/']
 
 # This is our wordlist with know words, like Github or Plone ...
-spelling_word_list_filename = '../spelling_wordlist.txt'
+spelling_word_list_filename = 'spelling_wordlist.txt'
 spelling_ignore_pypi_package_names=True
 
 # Add any paths that contain templates here, relative to this directory.
