@@ -42,6 +42,9 @@ Usage
 -----
 Every command which you typical run via your ``Makefile`` like ``make html`` within Sphinx you can run via mr.docs.
 
+
+.. todo:: Add link to overview with all possible commands
+
 Example
 ~~~~~~~
 Change into the main directory of your project you working on, for example the `Unified Installer <https://github.com/plone/Installers-UnifiedInstaller>`_ for `Plone <https://plone.org>`_.
@@ -64,7 +67,7 @@ Typically you do want to have this as an alias, to make it easy to remember, for
 
     $ mrdocs html
 
-Please refer to the setup part [tbc] for more on setup and configuration.
+This will build the documentation as html.
 
 .. toctree::
    :maxdepth: 2
