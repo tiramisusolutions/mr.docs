@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# We like colors
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+yellow=`tput setaf 3`
+
+
+
+mrdocs_update() {
+    docker pull quay.io/tiramisu/mr.docs
+}
+
+mrdocs() {
+	if [[ $@ ]]; then
+	    : #Do nothing
+	else
+	    clear
+	    echo "${red}Missing argument${reset}"
+	    echo "Use""${green} mrdocs"${reset}"${yellow} html linkcheck spellcheck${reset}"
+	    kill -INT $$;
+	fi
+
+        if [ -d "docs/_build" ]; then
+            rm -rf docs/_build
+        fi
+        docker run -it --rm -v ${PWD}/docs:/build/docs:rw \
+	    -u $(id -u):$(id -g) \
+            --name docs-test \
+            quay.io/tiramisu/mr.docs "$1"
+}
+
+_mrdocs() {
+    local cur prev opts
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts="html linkcheck spellcheck"
+
+    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+}
+complete -F _mrdocs mrdocs
