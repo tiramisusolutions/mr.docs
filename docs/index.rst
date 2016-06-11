@@ -74,7 +74,7 @@ This will build the documentation as html. If you want to know more about how to
    :maxdepth: 2
 
    setup
-
+   update
 
 To do
 -----

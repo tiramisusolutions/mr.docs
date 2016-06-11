@@ -3,7 +3,11 @@ Setup
 
 To make it easy we use some functions to talk with our container
 
-Download the gist, according to your OS and save it as for example as .mrdocsfunc
+.. warning:: Please review, before you download, never blindly download !
+
+We provide some example functions which you can use if you like
+
+HERE THE EXAMPLES AS GIST
 
 Linux
 -----
@@ -12,7 +16,7 @@ The following is tested with Debian, Ubuntu and Fedora
 
 .. code-block:: bash
 
-      $ wget https://gist.githubusercontent.com/svx/45d6a801c3bd21630356/raw/ecbabe48de69b69e346f0cf39b18a0f5ca696c18/mr.docs-dockerfunctions -O ~/.dockerfunc
+      $ wget https://gist.githubusercontent.com/svx/0e9f5b8ba2215d9ee08e4b2e82847826/raw/0e9bca68e9221254c456a3fff464ed9dcbea4439/mrdocsfunc -O ~/.mrdocsfunc
 
 Adjust your `.bashrc` to source your new functions, we will use vim, but of course you can do that with the editor of your choice.
 
@@ -39,7 +43,7 @@ OSX
 ----
 .. code-block:: bash
 
-      $ wget https://gist.githubusercontent.com/svx/0ce0a0697ae372c3e044/raw/b0411fcafa4a123cf8f0701faa7d22999e12d4fc/mr.docs-dockerfunctions-osx -O ~/.dockerfunc
+      $ wget https://gist.githubusercontent.com/svx/0ce0a0697ae372c3e044/raw/b0411fcafa4a123cf8f0701faa7d22999e12d4fc/mr.docs-dockerfunctions-osx -O ~/.mrdocsfunc
 
 
 
