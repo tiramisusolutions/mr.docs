@@ -7,11 +7,6 @@ reset=`tput sgr0`
 yellow=`tput setaf 3`
 
 
-
-mrdocs_update() {
-    docker pull quay.io/tiramisu/mr.docs
-}
-
 mrdocs() {
 	if [[ $@ ]]; then
 	    : #Do nothing

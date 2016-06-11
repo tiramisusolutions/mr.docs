@@ -61,13 +61,14 @@ If you want to build now the documentation as ``html``, just run:
 
     $ docker run -it --rm -v ${PWD}/docs:/build/docs:rw -u $(id -u):$(id -g) --name docs-test quay.io/tiramisu/mr.docs html
 
-Typically you do want to have this as an alias, to make it easy to remember, for example I use the alias ``mrdocs`` so I can just run:
+Typically you do want to have this as an alias or function, to make it easy to remember, use for example the alias ``mrdocs`` so that you can execute:
 
 .. code-block:: bash
 
     $ mrdocs html
 
-This will build the documentation as html.
+This will build the documentation as html. If you want to know more about how to use an alias or function, please read <LINK_TO_SETUP>
+
 
 .. toctree::
    :maxdepth: 2
