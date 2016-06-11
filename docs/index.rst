@@ -12,9 +12,9 @@ Dependencies
 
 - `Docker <https://docker.com>`_
 
-If you do not have Docker installed yet, please follow the `official install guide <https://docs.docker.com/installation/>`_.
+If you do not have Docker installed yet, please follow the `official install guide <https://docs.docker.com/engine/installation//>`_.
 
-In order to make everyting work, please make sure to add your $USER to the ``docker group`` sothat you are able to run docker without root or sudo.
+In order to make everyting work, please make sure to add your $USER to the ``docker group`` so that you are able to run docker without root or sudo.
 
 Getting mr.docs
 ---------------
