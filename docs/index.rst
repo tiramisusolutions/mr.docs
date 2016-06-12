@@ -5,6 +5,8 @@ About
 
 A testing tool for `Sphinx <http://sphinx-doc.org/>`_ based and in `reStructuredText [rst] <http://sphinx-doc.org/rest.html>`_ written documentation.
 
+.. image:: _static/mrdocs-help-display.png
+
 See a `example on YouTube <https://www.youtube.com/watch?v=ik-1e-93RI4&feature=youtu.be>`_.
 
 Dependencies
@@ -22,14 +24,6 @@ Getting mr.docs
 
     $ docker pull quay.io/tiramisu/mr.docs
 
-Update the image
-~~~~~~~~~~~~~~~~
-
-The only thing what you have to do is a new pull of the image:
-
-.. code-block:: bash
-
-    $ docker pull quay.io/tiramisu/mr.docs
 
 Assumptions
 -----------
@@ -52,7 +46,7 @@ Change into the main directory of your project you working on, for example the `
 
     $ cd Projects/temp/Installers-UnifiedInstaller/
 
-If you do now a ``ls``, you will see we have here a directory called ``docs``, great !
+If you do now a ``ls``, you will see we have here a directory called *docs*, great !
 
 If you want to build now the documentation as ``html``, just run:
 
@@ -66,12 +60,12 @@ Typically you do want to have this as an alias or function, to make it easy to r
 
     $ mrdocs html
 
-This will build the documentation as html. If you want to know more about how to use an alias or function, please read <LINK_TO_SETUP>
+This will build the documentation as html. If you would like to know more about how to use an alias or function, please read :doc:`the documentation about setup and configuration <setup>`.
 
 
 .. toctree::
    :hidden:
-   :maxdepth:
+   :maxdepth: 1
 
    setup
    update
