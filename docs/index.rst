@@ -3,11 +3,18 @@ mr.docs
 About
 -----
 
-A testing tool for `Sphinx <http://sphinx-doc.org/>`_ based and in `reStructuredText [rst] <http://sphinx-doc.org/rest.html>`_ written documentation.
+A container wrapper based on `Alpine Linux <http://www.alpinelinux.org/>`_ for `Sphinx <http://sphinx-doc.org/>`_ based `reStructuredText [rst] <http://sphinx-doc.org/rest.html>`_ written documentation.
+
+The main propose behind mr.docs is to avoid the installation of `Sphinx <http://sphinx-doc.org/>`_ into all project directories to build and test documentation over and over again.
+
+- install it once
+- one configuration
+- speed
+- works with different Operating Systems
+- not messing with system python and other dependencies
+- 'smallish'
 
 .. image:: _static/mrdocs-help-display.png
-
-See a `example on YouTube <https://www.youtube.com/watch?v=ik-1e-93RI4&feature=youtu.be>`_.
 
 Dependencies
 ------------
@@ -34,9 +41,6 @@ mr.docs assumes that the documentation you want to test is located in a director
 Usage
 -----
 Every command which you typical run via your ``Makefile`` like *make html* within Sphinx you can run via mr.docs.
-
-
-.. todo:: Add link to overview with all possible commands
 
 Example
 ~~~~~~~
