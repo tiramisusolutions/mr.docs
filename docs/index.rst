@@ -12,9 +12,8 @@ Dependencies
 
 - `Docker <https://docker.com>`_
 
-If you do not have Docker installed yet, please follow the `official install guide <https://docs.docker.com/engine/installation//>`_.
+If you do not have Docker installed yet, please follow the `official install guide <https://docs.docker.com/engine/installation/>`_.
 
-In order to make everyting work, please make sure to add your $USER to the ``docker group`` so that you are able to run docker without root or sudo.
 
 Getting mr.docs
 ---------------
@@ -40,7 +39,7 @@ mr.docs assumes that the documentation you want to test is located in a director
 
 Usage
 -----
-Every command which you typical run via your ``Makefile`` like ``make html`` within Sphinx you can run via mr.docs.
+Every command which you typical run via your ``Makefile`` like *make html* within Sphinx you can run via mr.docs.
 
 
 .. todo:: Add link to overview with all possible commands
@@ -71,7 +70,8 @@ This will build the documentation as html. If you want to know more about how to
 
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
+   :maxdepth:
 
    setup
    update

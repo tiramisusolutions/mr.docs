@@ -5,45 +5,52 @@ To make it easy we use some functions to talk with our container
 
 .. warning:: Please review, before you download, never blindly download !
 
-We provide some example functions which you can use if you like
+.. versionchanged:: 2.0
+    name of functions
 
-HERE THE EXAMPLES AS GIST
+Here is an example:
 
-Linux
------
+.. gist:: https://gist.github.com/svx/0e9f5b8ba2215d9ee08e4b2e82847826
 
-The following is tested with Debian, Ubuntu and Fedora
-
-.. code-block:: bash
-
-      $ wget https://gist.githubusercontent.com/svx/0e9f5b8ba2215d9ee08e4b2e82847826/raw/0e9bca68e9221254c456a3fff464ed9dcbea4439/mrdocsfunc -O ~/.mrdocsfunc
-
-Adjust your `.bashrc` to source your new functions, we will use vim, but of course you can do that with the editor of your choice.
+Configuration
+-------------
 
 .. code-block:: bash
 
-    $ vim .bashrc
+    $ wget https://gist.githubusercontent.com/svx/0e9f5b8ba2215d9ee08e4b2e82847826/raw/0e9bca68e9221254c456a3fff464ed9dcbea4439/mrdocsfunc -O ~/.mrdocsfunc
+
+Adjust your `.bashrc` [Linux] or `.bash_profile` [macOS] to load your new functions.
+
+.. note:: We use vim as editor, you can also use the editor if your choice
+
+
+.. example-code::
+    .. code-block:: Linux
+
+       $ vim .bashrc
+
+    .. code-block:: macOS
+
+        $ vim .bash_profile
 
 .. code-block:: bash
 
     # source [load] mrdocsfunc
-    source .dockerfunc
+    source .mrdocsfunc
 
-Save the file and reload your bash
+Save the file and reload it
 
-.. code-block:: bash
+.. example-code::
+    .. code-block:: Linux
 
-    $ source .bashrc
+       $ source .bashrc
 
-or close this terminal and start a new one
+    .. code-block:: macOS
+
+        $ source .bash_profile
 
 
-
-OSX
-----
-.. code-block:: bash
-
-      $ wget https://gist.githubusercontent.com/svx/0ce0a0697ae372c3e044/raw/b0411fcafa4a123cf8f0701faa7d22999e12d4fc/mr.docs-dockerfunctions-osx -O ~/.mrdocsfunc
+or close the terminal and start a new one
 
 
 
