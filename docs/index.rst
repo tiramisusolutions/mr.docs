@@ -60,7 +60,10 @@ Typically you do want to have this as an alias or function, to make it easy to r
 
     $ mrdocs html
 
-This will build the documentation as html. If you would like to know more about how to use an alias or function, please read :doc:`the documentation about setup and configuration <setup>`.
+This will build the documentation as html and will store int under *_build/html* of your *docs* directory.
+
+If you would like to know more about how to use an alias or function, please read :doc:`the documentation about setup and configuration <setup>`.
+
 
 
 .. toctree::
@@ -68,12 +71,8 @@ This will build the documentation as html. If you would like to know more about 
    :maxdepth: 1
 
    setup
+   builder
    update
-
-To do
------
-- add video
-- add screenshots
 
 
 

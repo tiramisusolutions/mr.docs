@@ -7,13 +7,22 @@ reset=`tput sgr0`
 yellow=`tput setaf 3`
 
 
+
+mrdocs_update() {
+    docker pull quay.io/tiramisu/mr.docs
+}
+
 mrdocs() {
 	if [[ $@ ]]; then
 	    : #Do nothing
 	else
 	    clear
-	    echo "${red}Missing argument${reset}"
-	    echo "Use""${green} mrdocs"${reset}"${yellow} html linkcheck spellcheck${reset}"
+	    echo "${red}mr.docs - help${reset}"
+	    echo "Usage:""${green} mrdocs"${reset}"${yellow} html linkcheck spellcheck${reset}"
+	    echo ""
+	    echo "${green}mrdocs html"${reset}"${yellow} => builds html${reset}"
+	    echo "${green}mrdocs linkcheck"${reset}"${yellow} => runs linkcheck${reset}"
+	    echo "${green}mrdocs spellcheck"${reset}"${yellow} => runs spellcheck${reset}"
 	    kill -INT $$;
 	fi
 
@@ -22,15 +31,16 @@ mrdocs() {
         fi
         docker run -it --rm -v ${PWD}/docs:/build/docs:rw \
 	    -u $(id -u):$(id -g) \
-            --name docs-test \
-            quay.io/tiramisu/mr.docs "$1"
+            --name docs-test-foo \
+            mdtest "$1"
+        #sudo chown -R $USER:$USER docs
 }
 
 _mrdocs() {
     local cur prev opts
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts="html linkcheck spellcheck"
+    opts="html linkcheck spellcheck help"
 
     COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
 }
