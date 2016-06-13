@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # We like colors
-red=`tput setaf 1`
-green=`tput setaf 2`
-reset=`tput sgr0`
-yellow=`tput setaf 3`
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+reset=$(tput sgr0)
+yellow=$(tput setaf 3)
 
 
 
@@ -18,11 +18,11 @@ mrdocs() {
 	else
 	    clear
 	    echo "${red}mr.docs - help${reset}"
-	    echo "Usage:""${green} mrdocs"${reset}"${yellow} html linkcheck spellcheck${reset}"
+	    echo "Usage:${green} mrdocs${reset}${yellow} html linkcheck spellcheck${reset}"
 	    echo ""
-	    echo "${green}mrdocs html"${reset}"${yellow} => builds html${reset}"
-	    echo "${green}mrdocs linkcheck"${reset}"${yellow} => runs linkcheck${reset}"
-	    echo "${green}mrdocs spellcheck"${reset}"${yellow} => runs spellcheck${reset}"
+	    echo "${green}mrdocs html${reset}${yellow} => builds html${reset}"
+	    echo "${green}mrdocs linkcheck${reset}${yellow} => runs linkcheck${reset}"
+	    echo "${green}mrdocs spellcheck${reset}${yellow} => runs spellcheck${reset}"
 	    kill -INT $$;
 	fi
 
@@ -31,8 +31,8 @@ mrdocs() {
         fi
         docker run -it --rm -v ${PWD}/docs:/build/docs:rw \
 	    -u $(id -u):$(id -g) \
-            --name docs-test-foo \
-            mdtest "$1"
+            --name docs-tester \
+            mr.docs "$1"
         #sudo chown -R $USER:$USER docs
 }
 
@@ -42,6 +42,6 @@ _mrdocs() {
     prev="${COMP_WORDS[COMP_CWORD-1]}"
     opts="html linkcheck spellcheck help"
 
-    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
 }
 complete -F _mrdocs mrdocs
