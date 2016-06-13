@@ -43,6 +43,7 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 	@echo "  dummy      to check syntax errors of document sources"
+	@echo "  spellcheck to run spellcheck against the docs"
 
 .PHONY: clean
 clean:
@@ -223,3 +224,11 @@ dummy:
 	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
 	@echo
 	@echo "Build finished. Dummy builder generates no files."
+
+.PHONY: spellcheck
+spellcheck:
+	LANGUAGE=$* $(SPHINXBUILD) -b spelling -j 4 $(ALLSPHINXOPTS) $(BUILDDIR)/buildlog/spellcheck/$*
+	@echo
+	@echo "Testing of doctests in the sources finished, look at the " \
+	    "results in $(BUILDDIR)/doctest/output.txt."
+
