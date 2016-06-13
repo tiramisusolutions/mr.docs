@@ -5,3 +5,5 @@ bin/*
 .DS_Store
 .Python
 docs/.DS_Store
+lib64
+pip-selfcheck.json

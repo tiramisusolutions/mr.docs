@@ -3,43 +3,54 @@ Setup
 
 To make it easy we use some functions to talk with our container
 
-Download the gist, according to your OS and save it as for example as .dockerfunc
+.. warning:: Please review, before you download, never blindly download !
 
-Linux
------
+.. versionchanged:: 2.0
+    name of functions
 
-The following is tested with Debian, Ubuntu and Fedora
+Here is an example:
 
-.. code-block:: bash
+.. gist:: https://gist.github.com/svx/0e9f5b8ba2215d9ee08e4b2e82847826
 
-      $ wget https://gist.githubusercontent.com/svx/45d6a801c3bd21630356/raw/ecbabe48de69b69e346f0cf39b18a0f5ca696c18/mr.docs-dockerfunctions -O ~/.dockerfunc
-
-Adjust your `.bashrc` to source your new functions, we will use vim, but of course you can do that with the editor of your choice.
-
-.. code-block:: bash
-
-    $ vim .bashrc
+Configuration
+-------------
 
 .. code-block:: bash
 
-    # source dockerfunc
-    source .dockerfunc
+    $ wget https://gist.githubusercontent.com/svx/0e9f5b8ba2215d9ee08e4b2e82847826/raw/0e9bca68e9221254c456a3fff464ed9dcbea4439/mrdocsfunc -O ~/.mrdocsfunc
 
-Save the file and reload your bash
+Adjust your `.bashrc` [Linux] or `.bash_profile` [macOS] to load your new functions.
+
+.. note:: We use vim as editor, you can also use the editor if your choice
+
+
+.. example-code::
+    .. code-block:: Linux
+
+       $ vim .bashrc
+
+    .. code-block:: macOS
+
+        $ vim .bash_profile
 
 .. code-block:: bash
 
-    $ source .bashrc
+    # source [load] mrdocsfunc
+    source .mrdocsfunc
 
-or close this terminal and start a new one
+Save the file and reload it
+
+.. example-code::
+    .. code-block:: Linux
+
+       $ source .bashrc
+
+    .. code-block:: macOS
+
+        $ source .bash_profile
 
 
-
-OSX
-----
-.. code-block:: bash
-
-      $ wget https://gist.githubusercontent.com/svx/0ce0a0697ae372c3e044/raw/b0411fcafa4a123cf8f0701faa7d22999e12d4fc/mr.docs-dockerfunctions-osx -O ~/.dockerfunc
+or close the terminal and start a new one
 
 
 

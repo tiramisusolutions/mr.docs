@@ -4,3 +4,6 @@
 .git
 docs/*
 travisfiles/*
+setup/*
+lib64
+pip-selfcheck.json
