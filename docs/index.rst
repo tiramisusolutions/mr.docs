@@ -56,7 +56,7 @@ If you want to build now the documentation as ``html``, just run:
 
 .. code-block:: bash
 
-    $ docker run -it --rm -v ${PWD}/docs:/build/docs:rw -u $(id -u):$(id -g) --name docs-test quay.io/tiramisu/mr.docs html
+    $ docker run -it --rm -v ${PWD}/docs:/build/docs:rw -u $(id -u):$(id -g) --name docs-tester quay.io/tiramisu/mr.docs html
 
 Typically you do want to have this as an alias or function, to make it easy to remember, use for example the alias ``mrdocs`` so that you can execute:
 
