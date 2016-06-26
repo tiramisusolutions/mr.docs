@@ -75,6 +75,7 @@ If you would like to know more about how to use an alias or function, please rea
    :maxdepth: 1
 
    setup
+   configuration
    builder
    update
 
