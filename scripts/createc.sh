@@ -20,7 +20,50 @@ function error_exit {
 	exit 1
 }
 
+#####
+ask() {
+    # http://djm.me/ask
+    while true; do
 
+        if [ "${2:-}" = "Y" ]; then
+            prompt="Y/n"
+            default=Y
+        elif [ "${2:-}" = "N" ]; then
+            prompt="y/N"
+            default=N
+        else
+            prompt="y/n"
+            default=
+        fi
+
+        # Ask the question (not using "read -p" as it uses stderr not stdout)
+        echo -n "$1 [$prompt] "
+
+        # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
+        read REPLY </dev/tty
+
+        # Default?
+        if [ -z "$REPLY" ]; then
+            REPLY=$default
+        fi
+
+        # Check if the reply is valid
+        case "$REPLY" in
+            Y*|y*) return 0 ;;
+            N*|n*) return 1 ;;
+        esac
+
+    done
+}
+# Default to No if the user presses enter without giving an answer:
+#if ask "Do you want to do such-and-such?" N; then
+#    echo "Yes"
+#else
+#    echo "No"
+#fi
+
+
+####
 #project=$project_name
 #: ${project:="createc"}
 #author="sven"
@@ -43,7 +86,13 @@ echo -en "$COL_YELLOW Running checks ...$COL_RESET"
 
 # Check if we have already a config, file, if so tell
 if [ -f conf.py ]; then
-    error_exit "Detected conf.py !  Aborting."
+    	if ask "Do you want to override?" N; then
+		rm conf.py
+		#error_exit "Detected conf.py !  Aborting."
+	else
+		error_exit "Detected conf.py !  Aborting."
+		#rm conf.py
+	fi
     #echo -en "$COL_RED We have already a config file$COL_RESET"
     #exit 1
 else
