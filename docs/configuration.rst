@@ -17,5 +17,11 @@ Let mr.docs setup the configuration
 If you do not have already one, or you would like to create another/new one, you can tell mr.docs to do so.
 .. code-block:: bash
     make config
-This will start a script, which will ask a couple of questions like the name you would like to use for your project and the name of the author/authors 
+This will start a script, which will ask a couple of questions like the name you would like to use for your project and the name of the author/authors
 [pic of script in action]
+
+Spell-check
+-----------
+
+mr.docs uses a default wordlist for spell checking, this list is written for `Plone <https://plone.org`_. If you would like to replace this list with your own one you can do that with the following steps
+[add steps]
