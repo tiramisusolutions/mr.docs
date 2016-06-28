@@ -8,15 +8,15 @@ COL_RED=$ESC_SEQ"31;01m"
 COL_GREEN=$ESC_SEQ"32;01m"
 COL_YELLOW=$ESC_SEQ"33;01m"
 COL_BLUE=$ESC_SEQ"34;01m"
-COL_MAGENTA=$ESC_SEQ"35;01m"
-COL_CYAN=$ESC_SEQ"36;01m"
+#COL_MAGENTA=$ESC_SEQ"35;01m"
+#COL_CYAN=$ESC_SEQ"36;01m"
 
 
 ## Functions we use
 # Error
 
 function error_exit {
-	echo -en "$COL_RED"$1"$COL_RESET" 1>&2
+	echo -en "$COL_RED$1$COL_RESET" 1>&2
 	exit 1
 }
 
@@ -37,7 +37,7 @@ ask() {
         fi
 
         # Ask the question (not using "read -p" as it uses stderr not stdout)
-        echo -n "$1 [$prompt] "
+        echo -en "$COL_BLUE$1$COL_RESET [$prompt] "
 
         # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
         read REPLY </dev/tty
@@ -55,6 +55,7 @@ ask() {
 
     done
 }
+## Example
 # Default to No if the user presses enter without giving an answer:
 #if ask "Do you want to do such-and-such?" N; then
 #    echo "Yes"
@@ -64,11 +65,8 @@ ask() {
 
 
 ####
-#project=$project_name
-#: ${project:="createc"}
-#author="sven"
+# Vars
 YEAR=$(date +"%Y")
-#version="1.0"
 
 # Use "-d" to skip questions and just use the defaults
 while getopts ":d" opt; do
@@ -85,43 +83,53 @@ done
 echo -en "$COL_YELLOW Running checks ...$COL_RESET"
 
 # Check if we have already a config, file, if so tell
-if [ -f conf.py ]; then
+if [ -f docs/conf.py ]; then
     	if ask "Do you want to override?" N; then
-		rm conf.py
-		#error_exit "Detected conf.py !  Aborting."
+		rm docs/conf.py
 	else
 		error_exit "Detected conf.py !  Aborting."
-		#rm conf.py
 	fi
-    #echo -en "$COL_RED We have already a config file$COL_RESET"
-    #exit 1
 else
     echo -en "$COL_YELLOW Looking good, lets continue$COL_RESET"
 fi
 
+# Ask forthe name of the project
 echo -en "$COL_GREEN Name of the project:$COL_RESET"
 read project_name
 project=$project_name
-: ${project:="createc"}
+: "${project:="createc"}"
 
+# Ask for the name of the author
 echo -en "$COL_GREEN Name of the author:$COL_RESET"
 read project_author
 author=$project_author
-: ${author:="sven"}
+: "${author:="sven"}"
 
-#echo -en "$COL_GREEN Year of creation:$COL_RESET"
-#read creation_year
-#year=$creation_year
-#: ${year:="2016"}
-
+# Ask for the version, like 1.0
 echo -en "$COL_GREEN This is version:$COL_RESET"
 read project_version
 version=$project_version
-: ${version:="1.0"}
+: "${version:="1.0"}"
 
-cp conf.py.ini conf.py
-sed -i "s/template.project_name/$project/g" conf.py
-sed -i "s/template.author/$author/g" conf.py
-sed -i "s/template.year/$YEAR/g" conf.py
-sed -i "s/template.version/$version/g" conf.py
+# Ask for the html title
+echo -en "$COL_GREEN Please enter a title for html:$COL_RESET"
+read project_html_title
+project_title=$project_html_title
+: "${project_title="My long html title"}"
 
+# Ask for the short title
+echo -en "$COL_GREEN Please enter a short title for html:$COL_RESET"
+read project_html_short_title
+project_title_short=$project_html_short_title
+: "${project_title_short="My short title"}"
+
+# Copy the template over
+cp src/conf.py.ini docs/conf.py
+
+# Run sed to replace the place holder
+sed -i "s/template_project_name/$project/g" docs/conf.py
+sed -i "s/template_author/$author/g" docs/conf.py
+sed -i "s/template_year/$YEAR/g" docs/conf.py
+sed -i "s/template_version/$version/g" docs/conf.py
+sed -i "s/template_html.title/$project_title/g" docs/conf.py
+sed -i "s/template_html_short_title/$project_title_short/g" docs/conf.py
