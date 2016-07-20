@@ -82,6 +82,16 @@ done
 # Start the questions
 echo -en "$COL_YELLOW Running checks ...$COL_RESET"
 
+# If we have no .jekyll we will create one
+echo -en "$COL_YELLOW Do we have a .jekyll already? ...$COL_RESET"
+if [ -f "docs/.jekyll" ]; then
+	echo -en "$COL_YELLOW Found one moving on ...$COL_RESET"
+	: # do nothing and move on
+else
+	echo -en "$COL_YELLOW Creating .jekyll ...$COL_RESET"
+	touch docs/.jekyll
+fi
+
 # Check if we have already a config, file, if so tell
 if [ -f docs/conf.py ]; then
     	if ask "Do you want to override?" N; then
