@@ -79,7 +79,7 @@ while getopts ":d" opt; do
 done
 
 
-# Start the questions
+# Start running checks, like do we have already d conf.py in docs and so on
 echo -en "$COL_YELLOW Running checks ...$COL_RESET"
 
 # If we have no .jekyll we will create one
@@ -90,6 +90,15 @@ if [ -f "docs/.jekyll" ]; then
 else
 	echo -en "$COL_YELLOW Creating .jekyll ...$COL_RESET"
 	touch docs/.jekyll
+fi
+
+# Check if we have already a index.rst if not create one
+echo -en "$COL_YELLOW Checking for a index.rst ...$COL_RESET"
+if [ -f "docs/index.rst" ]; then
+	echo -en "$COL_YELLOW It seems there is no index, creating one now ...$COL_RESET"
+	cp src/index.ini docs/index.rst
+else
+	: # we have one, so we move on
 fi
 
 # Check if we have already a config, file, if so tell
@@ -103,7 +112,9 @@ else
     echo -en "$COL_YELLOW Looking good, lets continue$COL_RESET"
 fi
 
-# Ask forthe name of the project
+
+# Start the questions
+# Ask for the name of the project
 echo -en "$COL_GREEN Name of the project:$COL_RESET"
 read project_name
 project=$project_name
