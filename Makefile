@@ -44,6 +44,7 @@ help:
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 	@echo "  dummy      to check syntax errors of document sources"
 	@echo "  spellcheck to run spellcheck against the docs"
+	@echo "  testbuild  to run a test build in picky mode"
 
 .PHONY: clean
 clean:
@@ -54,6 +55,12 @@ html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+
+.PHONY: testbuild
+testbuild:
+	$(SPHINXBUILD) -nW -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	@echo
+	@echo "Testbuild finished. The HTML pages are in $(BUILDDIR)/html."
 
 .PHONY: dirhtml
 dirhtml:
