@@ -1,24 +1,38 @@
-FROM alpine:3.4
-MAINTAINER Sven Strack <sven@so36.net>
+FROM alpine:latest
+MAINTAINER Sven Strack <sven@testthedocs.org>
 
 ENV PIP_CACHE /root/.cache
 
-RUN apk --no-cache add bash python py-pip openssl ca-certificates aspell-en \
-	enchant && \
-    apk --no-cache add --virtual build-dependencies \
-	python-dev build-base wget && \
-    pip install --upgrade pip && \
-    wget https://gist.githubusercontent.com/svx/eef4cda9b11df96a952347136821eaae/raw/cd6a5b3fbcd12b9751f9b6204bcbc9923cafb9db/mr.docs-requirements.txt && \
-    pip install -r mr.docs-requirements.txt &&\
-    rm mr.docs-requirements.txt &&\
-    rm -rf $PIP_CACHE && \
-    apk del build-dependencies && \
-    apk --no-cache add make
-
-
+RUN builddeps=' \
+	python-dev \
+	openssl-dev \
+	py-pip \
+	musl-dev \
+	openssl-dev \
+	libffi-dev \
+	gcc \
+	' \
+	&& apk --no-cache add \
+	ca-certificates \
+	python \
+	py-httplib2 \
+	bash \
+	make \
+    aspell-en \
+    enchant \
+	$builddeps \
+	&& pip install --upgrade pip \
+	&& pip install \
+		sphinx \
+		sphinx-rtd-theme \
+        sphinxcontrib-osexample \
+        sphinxcontrib-spelling \
+        sphinxcontrib.gist \
+        pyenchant \
+	&& apk del --purge $builddeps \
+	&& rm -rf $PIP_CACHE
 
 VOLUME ["/build/docs"]
-
 
 COPY conf /build/conf
 COPY spelling_wordlist.txt /build/spelling_wordlist.txt
@@ -27,3 +41,4 @@ COPY Makefile /build/Makefile
 WORKDIR /build
 
 ENTRYPOINT ["make"]
+

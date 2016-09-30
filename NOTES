@@ -1,0 +1,30 @@
+Current Status
+==============
+
+What do we have so far, what is already working:
+
+Running spell-check on /docs
+----------------------------
+docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd spellcheck
+
+Running spell-check inside the docs dir
+---------------------------------------
+docker run --rm -v "${PWD}":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd spellcheck
+
+Todo
+----
+
+- cleanup directory/repository
+- remove old functions from docs install part
+- add aliases as example to docs
+- update docs with latest changes and so on
+- add "..spelling::" hwoto to docs
+- finish "create config" idea
+- finish "use your own already existing config" idea
+- idea have your own spelling list in dir you want to test
+
+CHANGELOG
+---------
+- updated and slightly optimized Dockerfile
+- removed dashbuilder
+- add ignnore README.rst to conf

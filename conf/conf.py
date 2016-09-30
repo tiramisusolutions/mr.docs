@@ -33,7 +33,6 @@ import sphinx_rtd_theme
 extensions = [
     'sphinx.ext.todo',
     'sphinxcontrib.gist',
-    'sphinxcontrib.dashbuilder',
     'sphinxcontrib.spelling',
     'sphinxcontrib.osexample',
 ]
@@ -45,6 +44,8 @@ linkcheck_ignore = [r'http://localhost:\d+/']
 # This is our wordlist with know words, like Github or Plone ...
 spelling_word_list_filename = 'spelling_wordlist.txt'
 spelling_ignore_pypi_package_names=True
+
+exclude_patterns = ['README.rst']
 
 # Add any paths that contain templates here, relative to this directory.
 #templates_path = ['../_templates']

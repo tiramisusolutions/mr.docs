@@ -118,13 +118,13 @@ fi
 echo -en "$COL_GREEN Name of the project:$COL_RESET"
 read project_name
 project=$project_name
-: "${project:="createc"}"
+: "${project:="ExampleDocs"}"
 
 # Ask for the name of the author
 echo -en "$COL_GREEN Name of the author:$COL_RESET"
 read project_author
 author=$project_author
-: "${author:="sven"}"
+: "${author:="SomePerson"}"
 
 # Ask for the version, like 1.0
 echo -en "$COL_GREEN This is version:$COL_RESET"
@@ -145,7 +145,7 @@ project_title_short=$project_html_short_title
 : "${project_title_short="My short title"}"
 
 # Copy the template over
-cp src/conf.py.ini docs/conf.py
+cp templates/conf.py.ini docs/conf.py
 
 # Run sed to replace the place holder
 sed -i "s/template_project_name/$project/g" docs/conf.py
