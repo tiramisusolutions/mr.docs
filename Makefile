@@ -45,6 +45,7 @@ help:
 	@echo "  dummy      to check syntax errors of document sources"
 	@echo "  spellcheck to run spellcheck against the docs"
 	@echo "  testbuild  to run a test build in picky mode"
+	@echo "  config     to copy a base example config and a base index into /docs"
 
 .PHONY: clean
 clean:
