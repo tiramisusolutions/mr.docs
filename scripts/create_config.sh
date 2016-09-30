@@ -96,7 +96,7 @@ fi
 echo -en "$COL_YELLOW Checking for a index.rst ...$COL_RESET"
 if [ -f "docs/index.rst" ]; then
 	echo -en "$COL_YELLOW It seems there is no index, creating one now ...$COL_RESET"
-	cp src/index.ini docs/index.rst
+	cp templates/index.ini docs/index.rst
 else
 	: # we have one, so we move on
 fi

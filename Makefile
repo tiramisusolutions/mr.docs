@@ -234,8 +234,12 @@ dummy:
 
 .PHONY: spellcheck
 spellcheck:
-	LANGUAGE=$* $(SPHINXBUILD) -b spelling -j 4 $(ALLSPHINXOPTS) $(BUILDDIR)/buildlog/spellcheck/$*
+	LANGUAGE=$* $(SPHINXBUILD) -b spelling -j 4 $(ALLSPHINXOPTS) $(BUILDDIR)/spellcheck/$*
 	@echo
 	@echo "Testing of doctests in the sources finished, look at the " \
-	    "results in $(BUILDDIR)/doctest/output.txt."
+	    "results in $(BUILDDIR)/spellcheck/output.txt."
+
+.PHONY: config
+config:
+	./scripts/create_config.sh
 
