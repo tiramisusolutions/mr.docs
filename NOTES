@@ -11,6 +11,38 @@ Running spell-check inside the docs dir
 ---------------------------------------
 docker run --rm -v "${PWD}":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd spellcheck
 
+
+Creating/Copy config
+--------------------
+svx at beaker in ~/.../test/mr.docs
+$ docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd config
+./scripts/copy_config_template.sh
+ Running checks ...
+Do we have a .jekyll already? ...
+Creating .jekyll ...
+Checking for a index.rst ...
+Creating example index ...
+Checking for _static ...
+Creating _static ...
+Copy example configuration ...
+
+Done ! 
+
+Please adjust settings like ExampleProjectName and ExampleAuthor 
+
+in the config under /docs/config.py 
+
+
+Creating testhtml
+-----------------
+svx at beaker in ~/.../test/mr.docs
+$ docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd testhtml
+
+Creating html, with own config
+------------------------------
+svx at beaker in ~/.../test/mr.docs
+$ docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd html
+
 Todo
 ----
 
@@ -28,3 +60,5 @@ CHANGELOG
 - removed dashbuilder
 - add ignnore README.rst to conf
 - add make target to create a simple example conf and index
+- add make target for running test builds [picky mode]
+- add _static dir during script runtime

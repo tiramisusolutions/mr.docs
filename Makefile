@@ -6,6 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build -c conf
 PAPER         =
 BUILDDIR      = docs/_build
+HTMLBUILD     = sphinx-build
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -44,7 +45,7 @@ help:
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 	@echo "  dummy      to check syntax errors of document sources"
 	@echo "  spellcheck to run spellcheck against the docs"
-	@echo "  testbuild  to run a test build in picky mode"
+	@echo "  testhtml  to run a test build in picky mode"
 	@echo "  config     to copy a base example config and a base index into /docs"
 
 .PHONY: clean
@@ -52,16 +53,16 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 .PHONY: html
-html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+html: clean
+	$(HTMLBUILD) -nW -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-.PHONY: testbuild
-testbuild:
-	$(SPHINXBUILD) -nW -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+.PHONY: testhtml
+testhtml: clean
+	$(SPHINXBUILD) -nW -b html $(ALLSPHINXOPTS) $(BUILDDIR)/testhtml
 	@echo
-	@echo "Testbuild finished. The HTML pages are in $(BUILDDIR)/html."
+	@echo "Testbuild finished. The HTML pages are in $(BUILDDIR)test/html."
 
 .PHONY: dirhtml
 dirhtml:
