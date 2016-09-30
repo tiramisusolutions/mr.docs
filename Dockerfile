@@ -37,6 +37,8 @@ VOLUME ["/build/docs"]
 COPY conf /build/conf
 COPY spelling_wordlist.txt /build/spelling_wordlist.txt
 COPY Makefile /build/Makefile
+COPY templates /build/templates
+COPY scripts /build/scripts
 
 WORKDIR /build
 

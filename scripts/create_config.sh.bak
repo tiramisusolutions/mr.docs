@@ -95,12 +95,10 @@ fi
 # Check if we have already a index.rst if not create one
 echo -en "$COL_YELLOW Checking for a index.rst ...$COL_RESET\n"
 if [ -f "docs/index.rst" ]; then
-	echo -en "$COL_YELLOW Found index, moving on ...$COL_RESET\n"
-	: # Do nothing
-	#cp ../templates/index.ini docs/index.rst
-else
-	echo -en "$COL_YELLOW Creating example index ...$COL_RESET\n"
+	echo -en "$COL_YELLOW It seems there is no index, creating one now ...$COL_RESET\n"
 	cp templates/index.ini docs/index.rst
+else
+	: # we have one, so we move on
 fi
 
 # Check if we have already a config, file, if so tell

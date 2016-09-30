@@ -19,7 +19,6 @@ Todo
 - add aliases as example to docs
 - update docs with latest changes and so on
 - add "..spelling::" hwoto to docs
-- finish "create config" idea
 - finish "use your own already existing config" idea
 - idea have your own spelling list in dir you want to test
 
@@ -28,3 +27,4 @@ CHANGELOG
 - updated and slightly optimized Dockerfile
 - removed dashbuilder
 - add ignnore README.rst to conf
+- add make target to create a simple example conf and index

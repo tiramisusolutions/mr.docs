@@ -241,5 +241,5 @@ spellcheck:
 
 .PHONY: config
 config:
-	./scripts/create_config.sh
+	./scripts/copy_config_template.sh
 
