@@ -1,0 +1,149 @@
+#!/bin/bash
+set -e
+
+# Colors
+ESC_SEQ="\x1b["
+COL_RESET=$ESC_SEQ"39;49;00m"
+COL_RED=$ESC_SEQ"31;01m"
+#COL_GREEN=$ESC_SEQ"32;01m"
+COL_YELLOW=$ESC_SEQ"33;01m"
+COL_BLUE=$ESC_SEQ"34;01m"
+#COL_MAGENTA=$ESC_SEQ"35;01m"
+#COL_CYAN=$ESC_SEQ"36;01m"
+
+## Variables
+CHECKDIR=${PWD##*/}
+
+# Functions
+# Error
+error_exit() {
+	echo -en "$COL_RED$1$COL_RESET" 1>&2
+	exit 1
+}
+
+# Help
+help_msg(){
+    echo -en "$COL_YELLOW Usage: mrdocs [option]$COL_RESET\n"
+    echo -en "$COL_YELLOW -help, -h$COL_RESET""$COL_BLUE => show this help$COL_RESET\n"
+    echo -en "$COL_YELLOW -config, -c$COL_RESET""$COL_BLUE => create example config as starting point$COL_RESET\n"
+	echo -en "$COL_YELLOW -html$COL_RESET""$COL_BLUE => builds html version ready for deploy$COL_RESET\n"
+    echo -en "$COL_YELLOW -testhtml$COL_RESET""$COL_BLUE => builds test version, for local developing$COL_RESET\n"
+	echo -en "$COL_YELLOW -spell, -s$COL_RESET""$COL_BLUE => runs a spell-check against the docs$COL_RESET\n"
+}
+
+# Testhtml from main
+build_cmd_testhtml_main() {
+	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd testhtml
+}
+
+# Testhtml from /docs
+build_cmd_testhtml_docs() {
+	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd testhtml
+}
+
+# HTML from main
+build_cmd_html_main() {
+	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd html
+}
+
+# HTML from /docs
+build_cmd_html_docs() {
+	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd html
+}
+
+# Spell-check from main
+build_cmd_spell_main() {
+	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd spellcheck
+}
+
+# Spell-check from /docs
+build_cmd_spell_docs() {
+	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd spellcheck
+}
+
+# Copy config from main
+build_cmd_copy_config_main() {
+	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd config
+}
+
+# Copy config from /docs
+build_cmd_copy_config_docs() {
+	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd config
+}
+
+# Check if we in the /docs directory
+#if [ "$CHECKDIR" = "docs" ]; then
+#	echo -en "We are in docs"
+#else
+#	echo -en "We are in NOT /docs"
+#fi
+
+# Check if we get input, otherwise stop and show help
+if [[ $@ ]]; then
+	: #Do nothing
+else
+	clear
+	help_msg
+	exit 0
+fi
+
+
+# Loop
+while :
+do
+	case "$1" in
+
+		-h | -help)
+			help_msg
+			exit 0
+		shift 2
+		;;
+
+		-html)
+			if [ "$CHECKDIR" = "docs" ]; then
+				echo -en "Running html build within /docs"
+				build_cmd_html_docs
+			else
+				echo -en "Running html build from main"
+				build_cmd_html_main
+			fi
+		shift 2
+		;;
+
+		-testhtml)
+			if [ "$CHECKDIR" = "docs" ]; then
+				echo -en "Running testhtml build within /docs"
+				build_cmd_testhtml_docs
+			else
+				echo -en "Running testhtml build from main"
+				build_cmd_testhtml_main
+			fi
+		shift 2
+		;;
+
+		-spell | -s)
+			if [ "$CHECKDIR" = "docs" ]; then
+				echo -en "Running spell-check within /docs"
+				build_cmd_spell_docs
+			else
+				echo -en "Running spell-check from main"
+				build_cmd_spell_main
+			fi
+		shift 2
+		;;
+
+		-config | -c)
+			if [ "$CHECKDIR" = "docs" ]; then
+				echo -en "Copy config from within /docs"
+				build_cmd_copy_config_docs
+			else
+				echo -en "Copy config from main"
+				build_cmd_copy_config_main
+			fi
+		shift 2
+		;;
+
+	esac
+done
+
+#printf '%s\n' "${PWD##*/}"
