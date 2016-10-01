@@ -48,6 +48,15 @@ else
 	cp templates/index.ini docs/index.rst
 fi
 
+# Check if we have already a conf.py, if yes, soft exit
+if [ -f docs/conf.py ]; then
+	echo -en "$COL_RED You have already a config file !$COL_RESET\n"
+	exit 0
+else
+	echo -en "$COL_YELLOW Copy example configuration ...$COL_RESET\n"
+	cp templates/conf.py.ini docs/conf.py
+fi
+
 # Check if we already have a _static dir, if not create
 echo -en "$COL_YELLOW Checking for _static ...$COL_RESET\n"
 if [ -f "docs/_static" ]; then
@@ -56,15 +65,6 @@ if [ -f "docs/_static" ]; then
 else
 	echo -en "$COL_YELLOW Creating _static ...$COL_RESET\n"
 	mkdir -p docs/_static
-fi
-
-# Check if we have already a conf.py, if yes, soft exit
-if [ -f docs/conf.py ]; then
-    	echo -en "$COL_RED You have already a config file !$COL_RESET\n"
-		exit 0
-else
-		echo -en "$COL_YELLOW Copy example configuration ...$COL_RESET\n"
-		cp templates/conf.py.ini docs/conf.py
 fi
 
 echo
