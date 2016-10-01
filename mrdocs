@@ -144,6 +144,19 @@ do
 			fi
 		shift 2
 		;;
+		--) # End of all options
+		shift 2
+		break
+		;;
+
+		-*)
+		error_exit "Unknown option, please try -help"
+		;;
+
+		*)  # No more options
+		error_exit "Unknown option, please try -help"
+		;;
+
 
 	esac
 done
