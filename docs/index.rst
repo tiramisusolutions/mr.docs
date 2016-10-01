@@ -54,6 +54,8 @@ If you do now a ``ls``, you will see we have here a directory called *docs*, gre
 
 If you want to build now the documentation as ``html``, just run:
 
+**THIS NEEDS AN UPDATE**
+
 .. code-block:: bash
 
     $ docker run -it --rm -v ${PWD}/docs:/build/docs:rw -u $(id -u):$(id -g) --name docs-tester quay.io/tiramisu/mr.docs html
