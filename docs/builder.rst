@@ -38,7 +38,8 @@ This builder scans all documents for external links, tries to open them with `ur
 StandaloneHTMLBuilder
 ---------------------
 
-This is the standard HTML builder. Its output is a directory with HTML files, complete with style sheets and optionally the reST sources. There are quite a few configuration values that customize the output of this builder, see the chapter Options for HTML output for details.
+This is the standard HTML builder. Its output is a directory with HTML files, complete with style sheets and optionally the reST sources.
+There are quite a few configuration values that customize the output of this builder, see the chapter Options for HTML output for details.
 
 .. code-block:: bash
 
@@ -55,4 +56,5 @@ This builder runs a spell-check, more information on its `PYPI site <https://pyp
 
 mr.docs uses that builder in combination with `a file <https://github.com/tiramisusolutions/mr.docs/blob/master/spelling_wordlist.txt>`_ containing a list of words known to be spelled correctly but `that do not <https://sphinxcontrib-spelling.readthedocs.io/en/latest/customize.html#input-options>`_ appear in the language dictionary.
 
-For full list of possible builder options please browse to the `overview page <http://www.sphinx-doc.org/en/stable/builders.html>`_ of `Sphinx <http://www.sphinx-doc.org/en/stable/index.html>`_.
+For full list of possible builder options please browse to the `overview page <http://www.sphinx-doc.org/en/stable/builders.html>`_
+of `Sphinx <http://www.sphinx-doc.org/en/stable/index.html>`_.
