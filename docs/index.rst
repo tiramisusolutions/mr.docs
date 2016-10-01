@@ -1,18 +1,18 @@
 mr.docs
 =======
-About
------
 
 A container wrapper based on `Alpine Linux <http://www.alpinelinux.org/>`_ for `Sphinx <http://sphinx-doc.org/>`_ based `reStructuredText [rst] <http://sphinx-doc.org/rest.html>`_ written documentation.
 
+mr.docs is written for writing and testing documentation for `Plone <https://plone.org>`_. It may or may not fit your use case.
+
 The main propose behind mr.docs is to avoid the installation of `Sphinx <http://sphinx-doc.org/>`_ into all project directories to build and test documentation over and over again.
 
-- install it once
-- one configuration
-- speed
-- works with different Operating Systems
-- not messing with system python and other dependencies
-- 'smallish'
+- Install it once
+- One configuration
+- Speed
+- Works with different Operating Systems
+- Not messing with system python and other dependencies
+- 'Smallish'
 
 .. image:: _static/mrdocs-help-display.png
 
