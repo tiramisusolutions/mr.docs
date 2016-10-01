@@ -8,7 +8,7 @@ COL_RED=$ESC_SEQ"31;01m"
 #COL_GREEN=$ESC_SEQ"32;01m"
 COL_YELLOW=$ESC_SEQ"33;01m"
 COL_BLUE=$ESC_SEQ"34;01m"
-#COL_MAGENTA=$ESC_SEQ"35;01m"
+COL_MAGENTA=$ESC_SEQ"35;01m"
 #COL_CYAN=$ESC_SEQ"36;01m"
 
 ## Variables
@@ -24,11 +24,13 @@ error_exit() {
 # Help
 help_msg(){
     echo -en "$COL_YELLOW Usage: mrdocs [option]$COL_RESET\n"
-    echo -en "$COL_YELLOW -help, -h$COL_RESET""$COL_BLUE => show this help$COL_RESET\n"
+    echo -en "$COL_YELLOW -help, -h$COL_RESET""$COL_BLUE   => show this help$COL_RESET\n"
     echo -en "$COL_YELLOW -config, -c$COL_RESET""$COL_BLUE => create example config as starting point$COL_RESET\n"
-	echo -en "$COL_YELLOW -html$COL_RESET""$COL_BLUE => builds html version ready for deploy$COL_RESET\n"
-    echo -en "$COL_YELLOW -testhtml$COL_RESET""$COL_BLUE => builds test version, for local developing$COL_RESET\n"
-	echo -en "$COL_YELLOW -spell, -s$COL_RESET""$COL_BLUE => runs a spell-check against the docs$COL_RESET\n"
+	echo -en "$COL_YELLOW -html$COL_RESET""$COL_BLUE       => builds html version ready for deploy$COL_RESET\n"
+    echo -en "$COL_YELLOW -testhtml$COL_RESET""$COL_BLUE   => builds test version, for local developing$COL_RESET\n"
+	echo -en "$COL_YELLOW -spell, -s$COL_RESET""$COL_BLUE  => runs a spell-check against the docs$COL_RESET\n"
+	echo
+	echo -en "$COL_MAGENTA For more, please read the docs at https://mrdocs.readthedocs.io/en/latest/$COL_RESET\n"
 }
 
 # Testhtml from main
