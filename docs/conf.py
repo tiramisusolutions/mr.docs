@@ -33,7 +33,6 @@ import sphinx_rtd_theme
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinxcontrib.osexample',
     'sphinxcontrib.gist',
 
 ]
