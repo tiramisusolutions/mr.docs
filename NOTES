@@ -54,6 +54,13 @@ Todo
 - finish "use your own already existing config" idea
 - idea have your own spelling list in dir you want to test
 
+
+- Create replacement for old function, keep it simple, better less fancy but more robust and easier to update.
+  > check if we have all deps installed
+  > check dir, depending on in /docs or not run right docker command
+  > later: add check for updates, if new version, do docker pull
+  > add link to docs of mr.docs to script
+
 CHANGELOG
 ---------
 - updated and slightly optimized Dockerfile
