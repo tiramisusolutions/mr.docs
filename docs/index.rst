@@ -5,21 +5,30 @@ A container wrapper based on `Alpine Linux <http://www.alpinelinux.org/>`_ for `
 
 mr.docs is written for writing and testing documentation for `Plone <https://plone.org>`_. It may or may not fit your use case.
 
-The main propose behind mr.docs is to avoid the installation of `Sphinx <http://sphinx-doc.org/>`_ into all project directories to build and test documentation over and over again.
+The main purpose of mr.docs is **testing**, this is what mr.docs is written for.
+However you also can use mr.docs to build your documentation for *production*.
 
-- Install it once
+Features
+========
+
+- One installation
 - One configuration
 - Speed
 - Works with different Operating Systems
 - Not messing with system python and other dependencies
 - 'Smallish'
+- reStructuredText lint
+- Sphinx lint
+- HTML test-builds
+- HTML deployment builds
+- Spell-check
 
-.. image:: _static/mrdocs-help-display.png
 
 Dependencies
 ------------
 
 - `Docker <https://docker.com>`_
+- Bash
 
 If you do not have Docker installed yet, please follow the `official install guide <https://docs.docker.com/engine/installation/>`_.
 
@@ -29,58 +38,64 @@ Getting mr.docs
 
 .. code-block:: bash
 
-    $ docker pull quay.io/tiramisu/mr.docs
+  docker pull quay.io/tiramisu/mr.docs
 
+Updating
+~~~~~~~~
+
+.. code-block:: bash
+
+  docker pull quay.io/tiramisu/mr.docs
 
 Assumptions
 -----------
 
 mr.docs assumes that the documentation you want to test is located in a directory called ``docs`` and that the documentation is written is ``.rst``.
 
-
-Usage
------
-Every command which you typical run via your ``Makefile`` like *make html* within Sphinx you can run via mr.docs.
-
 Example
 ~~~~~~~
-Change into the main directory of your project you working on, for example the `Unified Installer <https://github.com/plone/Installers-UnifiedInstaller>`_ for `Plone <https://plone.org>`_.
+Change into the main directory of your project.
+
+For this example the code repository of the `mr.docs <https://github.com/tiramisusolutions/mr.docs/tree/master>`_ is used.
 
 .. code-block:: bash
 
-    $ cd Projects/temp/Installers-UnifiedInstaller/
+  cd Projects/tiramisu/mr.docs/
 
-If you do now a ``ls``, you will see we have here a directory called *docs*, great !
+If you do now a ``ls``, you will see we have here a directory called *docs*.
 
-If you want to build now the documentation as ``html``, just run:
+.. image:: _static/mrdocs-repo.png
+   :alt: Picture of repository with 'ls' output
 
-**THIS NEEDS AN UPDATE**
+Running a test build:
 
-.. code-block:: bash
+.. raw:: html
 
-    $ docker run -it --rm -v ${PWD}/docs:/build/docs:rw -u $(id -u):$(id -g) --name docs-tester quay.io/tiramisu/mr.docs html
+  <script type="text/javascript" src="https://asciinema.org/a/7kqnlf3jm1b1zzrzi72m83chn.js" id="asciicast-7kqnlf3jm1b1zzrzi72m83chn" alt="Short video example" async></script>
 
-Typically you do want to have this as an alias or function, to make it easy to remember, use for example the alias ``mrdocs`` so that you can execute:
+Generated HTML
 
-.. code-block:: bash
+.. image:: _static/misterdocs-testbuild-screen.png
+   :alt: Picture of generated HTML
 
-    $ mrdocs html
+Running a deployment build:
 
-This will build the documentation as html and will put it under *_build/html* of your *docs* directory.
+.. raw:: html
 
-If you would like to know more about how to use an alias or function, please read :doc:`the documentation about setup and configuration <setup>`.
+  <script type="text/javascript" src="https://asciinema.org/a/87803.js" id="asciicast-87803" alt="Short video example of deployment build" async></script>
 
+Generated HTML
 
+.. image:: _static/misterdocs-deploybuild-800.png
+   :alt: Picture of generated HTML
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
-   setup
+   usage
    configuration
-   builder
-   update
-   writing
+   changes
 
 
 
