@@ -45,15 +45,15 @@ Using A Script
 To make the usage of mr.docs easier and faster, there is a bash script, which also adds certain logics such as directory and file checking.
 **Use this on your own risk !**
 
-You can find the script on `GitHub <https://github.com/tiramisusolutions/mr.docs/blob/master/mrdocs>`_.
+You can find the script on `GitHub <https://github.com/tiramisusolutions/mr.docs/blob/2.1/mrdocs>`_.
 
 .. code-block:: bash
 
-    curl -o /usr/local/bin https://raw.githubusercontent.com/tiramisusolutions/mr.docs/master/mrdocs
+    curl -o /usr/local/bin https://raw.githubusercontent.com/tiramisusolutions/mr.docs/2.1/mrdocs
 
 This will download the script called *mr.docs* into */usr/local/bin*.
 
-Feel free to adjust the download location according to your setup/needs.
+Feel free to adjust the location according to your setup/needs.
 
 Script Usage:
 

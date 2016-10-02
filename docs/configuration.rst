@@ -16,7 +16,7 @@ Use Your Own Configuration File
 
 
 If you have already a own configuration file [*conf.py*] you can try use it.
-Copy it into your *docs* directory and it may work, this dependents on your configuration.
+Copy it into your *docs* directory and it may work, it dependents on your configuration.
 If your own setup, is using a add-on which is not installed within mr.docs this will not.work.
 
 
@@ -37,12 +37,12 @@ will copy a base template into your */docs* directory.
 You can now open the file *conf.py* in */docs* with the editor of your choice and start to adjust settings.
 
 For example you may want to change *ExampleProjectName* with the real name of your project.
-You can find more information about the various settings in the `Sphinx documentation <http://www.sphinx-doc.org/en/stable/config.html>`_.
+You can find more information about possible configuration settings in the `Sphinx documentation <http://www.sphinx-doc.org/en/stable/config.html>`_.
 
 Spell-check
 -----------
 
-mr.docs uses a default word-list for spell checking, this list is written for `Plone <https://plone.org>`_ and contains terms which are typical known
+mr.docs uses a default word-list for spell checking, this list written for `Plone <https://plone.org>`_ and contains terms which are typical known
 in Plone but not by spell-checker of dictionaries.
 
 If you want to add missing, new or your own needed terms or words to the spell-check you can add them on top of the document.
@@ -53,4 +53,5 @@ If you want to add missing, new or your own needed terms or words to the spell-c
        word1
        word2
        ...
+
 
