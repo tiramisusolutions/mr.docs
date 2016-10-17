@@ -22,7 +22,7 @@ Features
 - HTML test-builds
 - HTML deployment builds
 - Spell-check
-
+- configuration helper
 
 Dependencies
 ------------
