@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.1
+- improve Dockerfile
+- remove old add-ons
+- add coala for testing
+- update docs
+- update make targets
+- add make target to create sphinx config
+
 ## 2.0
 - update to Alpine 3.4 [svx]
 - remove sudo dependency [svx]
