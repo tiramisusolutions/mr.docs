@@ -16,6 +16,7 @@ It comes with a pre-configured list 'of good known words' based on typical terms
 - You do not need to install sphinx locally.
 - Pre-configured with different add-ons.
 - A new, clean and 'fresh' build with every test run.
+- Various checks
 
 
 ## Documentation
