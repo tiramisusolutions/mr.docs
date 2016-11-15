@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2.1
+- fix wrapper script
 - improve Dockerfile
 - remove old add-ons
 - add coala for testing

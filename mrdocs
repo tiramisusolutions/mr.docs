@@ -35,42 +35,42 @@ help_msg(){
 
 # Testhtml from main
 build_cmd_testhtml_main() {
-	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd testhtml
+	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" quay.io/tiramisu/mr.docs testhtml
 }
 
 # Testhtml from /docs
 build_cmd_testhtml_docs() {
-	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd testhtml
+	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" quay.io/tiramisu/mr.docs testhtml
 }
 
 # HTML from main
 build_cmd_html_main() {
-	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd html
+	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" quay.io/tiramisu/mr.docs html
 }
 
 # HTML from /docs
 build_cmd_html_docs() {
-	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd html
+	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" quay.io/tiramisu/mr.docs html
 }
 
 # Spell-check from main
 build_cmd_spell_main() {
-	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd spellcheck
+	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" quay.io/tiramisu/mr.docs spellcheck
 }
 
 # Spell-check from /docs
 build_cmd_spell_docs() {
-	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd spellcheck
+	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" quay.io/tiramisu/mr.docs spellcheck
 }
 
 # Copy config from main
 build_cmd_copy_config_main() {
-	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd config
+	docker run --rm -v "${PWD}/docs":/build/docs:rw -u "$(id -u)":"$(id -g)" quay.io/tiramisu/mr.docs config
 }
 
 # Copy config from /docs
 build_cmd_copy_config_docs() {
-	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" mrd config
+	docker run --rm -v "${PWD}/":/build/docs:rw -u "$(id -u)":"$(id -g)" quay.io/tiramisu/mr.docs config
 }
 
 # Check if we in the /docs directory
